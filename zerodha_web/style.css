@@ -1,7 +1,12 @@
-
-body {
-    background-color: red;
+button{
+    background-color: #387ed1;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 2px;
+    font-size: 20px
 }
+
 
 
 
