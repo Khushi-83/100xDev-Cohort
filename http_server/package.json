@@ -1,0 +1,22 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "example of a server",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Khushi-83/100xDev-Cohort.git"
+  },
+  "keywords": [
+    "server"
+  ],
+  "author": "Khushi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Khushi-83/100xDev-Cohort/issues"
+  },
+  "homepage": "https://github.com/Khushi-83/100xDev-Cohort#readme"
+}
