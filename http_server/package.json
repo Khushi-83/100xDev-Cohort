@@ -18,5 +18,11 @@
   "bugs": {
     "url": "https://github.com/Khushi-83/100xDev-Cohort/issues"
   },
-  "homepage": "https://github.com/Khushi-83/100xDev-Cohort#readme"
+  "homepage": "https://github.com/Khushi-83/100xDev-Cohort#readme",
+  "dependencies": {
+    "url": "^0.11.3"
+  }
 }
+
+
+

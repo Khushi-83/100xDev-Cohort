@@ -14,3 +14,9 @@
 1720694510745 /favicon.ico: New Req Received
 1720694530693 /about: New Req Received
 1720694531150 /favicon.ico: New Req Received
+1720720014945 /: New Req Received
+1720720024541 /about: New Req Received
+1720720039262 /: New Req Received
+1720720058199 /: New Req Received
+1720720067942 /about: New Req Received
+1720720079820 /contact: New Req Received
