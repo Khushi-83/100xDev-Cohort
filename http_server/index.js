@@ -1,15 +1,24 @@
 const http = require("http");
 const fs = require("fs");
+const url = require("url");
+
 const myServer = http.createServer((req, res) => {
-  const log = `${Date.now()} ${req.url}: New Req Received\n`; 
-  if (req.url === "/favicon.ico") return res.end();
+    if (req.url === "/favicon.ico") return res.end();
+    const log = `${Date.now()} ${req.url}: New Req Received\n`; 
+    const myUrl = url.parse(req.url, true);
+    console.log(myUrl);
     fs.appendFile("log.txt", log, (err, data)=> {
-        switch(req.url){
-            case "/": res.end("Hello World!!");
+        switch(myUrl.pathname  ){
+            case "/": 
+            res.end("Hello World!!");
             break;
-            case "/about": res.end("Hi, I am Khus Sinha");
+            case "/about": 
+            const username = myUrl.query.myname;
+            res.end(`Hi, ${username}`);
             break;
-            case "/contact": res.end("Contact me at sinhakhushi0803@gmail.com");
+            case "/search": 
+            const search = myUrl.query.search_query;
+            res.end("Your Search results for" + search);
             break;
             default: res.end("404 Page Not Found");     
         }
