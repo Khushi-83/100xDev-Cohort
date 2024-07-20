@@ -33,6 +33,7 @@
 
 const express = require("express");
 const app = express();
+const mongoose = require("mongoose");
 const port = 3000;
 
 app.get("/", (req, res) => {
@@ -46,6 +47,30 @@ app.get("/search", (req, res) => {
     const search = req.query.search_query;
     res.send("Your Search results for" + search);
 });
+
+const userSchema = new mongoose.Schema({
+    firstname{
+        type: String,
+        required: true,
+    },
+    lastname{
+        type: String,
+    },
+    email{
+        type: String,
+        required: true,
+        unique: true,
+    },
+    password{
+        type: String,
+        required: true,
+        unique: true,
+    },
+    age{
+        type: Number,
+    },
+});
+
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
 });
