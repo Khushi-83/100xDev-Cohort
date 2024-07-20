@@ -49,24 +49,24 @@ app.get("/search", (req, res) => {
 });
 
 const userSchema = new mongoose.Schema({
-    firstname{
+    firstname: {
         type: String,
         required: true,
     },
-    lastname{
+    lastname: {
         type: String,
     },
-    email{
-        type: String,
-        required: true,
-        unique: true,
-    },
-    password{
+    email:{
         type: String,
         required: true,
         unique: true,
     },
-    age{
+    password:{
+        type: String,
+        required: true,
+        unique: true,
+    },
+    age:{
         type: Number,
     },
 });
