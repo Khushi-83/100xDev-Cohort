@@ -71,6 +71,8 @@ const userSchema = new mongoose.Schema({
     },
 });
 
+const User = mongoose.model("User", userSchema);
+
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
 });
