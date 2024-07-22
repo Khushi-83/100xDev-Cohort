@@ -71,7 +71,7 @@ const userSchema = new mongoose.Schema({
     },
 });
 
-mongoose.connect(mongodb://127.0.0.1:27017/)
+mongoose.connect('mongodb://127.0.0.1:27017/TestDB ')
 const User = mongoose.model("User", userSchema);
 
 app.listen(port, () => {
