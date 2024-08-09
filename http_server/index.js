@@ -71,9 +71,32 @@ const userSchema = new mongoose.Schema({
     },
 });
 
+app.post("/api/users", async(req, res)=>{
+    if (
+        !body ||
+        !body.first_name ||
+        !body.last_name ||
+        !body.email ||
+        !body.gender ||
+        !body.ip_address 
+      )  {
+        return res.status(400).json({mag: "All feilds are required"});
+    }
+
+    const result = await User.create({
+        first_name: body.first_name,
+        last_name: body.last_name,
+        email: body.email,  
+        gender: body.gender,
+        ip_address: body.ip_address,           
+    });
+    console.log("result". result);
+    return res.status(201).json({msg: "successfully appended"});
+});
 mongoose.connect('mongodb://127.0.0.1:27017/TestDB')
 .then(() => console.log("MongoDB Connected"))
 .catch((err) => console.log("Mongo Error", err));
+
 const User = mongoose.model("User", userSchema);
 
 app.listen(port, () => {
