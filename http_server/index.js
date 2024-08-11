@@ -43,6 +43,18 @@ app.get("/about", (req, res) => {
     const username = req.query.myname;
     res.send(`Hi, ${username}`);
 });
+app.get("/users", async(req, res) =>{
+    const allDbUsers = await User.find({});
+    const html = `
+    <ul>
+       ${allDbUsers.map((user) => `<li>${user.firstname} - ${user.email} </li>`).join('')}
+    </ul>
+    `;
+       res.send(html);
+});
+app.get("/api/users", (req, res) =>{
+    return res.json(users);
+});
 app.get("/search", (req, res) => {
     const search = req.query.search_query;
     res.send("Your Search results for" + search);
@@ -98,7 +110,3 @@ mongoose.connect('mongodb://127.0.0.1:27017/TestDB')
 .catch((err) => console.log("Mongo Error", err));
 
 const User = mongoose.model("User", userSchema);
-
-app.listen(port, () => {
-    console.log(`Server is running on http://localhost:${port}`);
-});
