@@ -110,3 +110,7 @@ mongoose.connect('mongodb://127.0.0.1:27017/TestDB')
 .catch((err) => console.log("Mongo Error", err));
 
 const User = mongoose.model("User", userSchema);
+
+app.listen(port, () => {
+    console.log(`Server is running on http://localhost:${port}`);
+});
